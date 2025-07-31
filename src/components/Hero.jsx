@@ -44,7 +44,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               onClick={() => scrollToSection('projects')}
-              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8"
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8 flex justify-center items-center h-10"
             >
               View My Work <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -52,7 +52,8 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg px-8 border-primary hover:bg-primary hover:text-primary-foreground"
+              className="text-lg px-8 border-primary hover:bg-primary hover:text-primary-foreground flex justify-center items-center flex-wrap"
+              onClick={()=> window.open("https://drive.google.com/file/d/1wgCf27FV1wliWIgSK8v4UjgOFxCn28A5/view?usp=sharing", "_blank")}
             >
               <Download className="mr-2 h-5 w-5" /> Download CV
             </Button>
