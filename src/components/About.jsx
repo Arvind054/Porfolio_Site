@@ -55,14 +55,11 @@ const About = () => {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Currently pursuing B.Tech in Electronics and Communication Engineering at IIIT Trichy 
-                with a CGPA of 8.59/10.0. I'm working as a Full-Stack Developer Intern at ShikshaSathi, 
-                where I develop optimized RESTful APIs using Node.js, Express.js, and MongoDB, and build 
-                responsive UIs with React.js and Tailwind CSS.
+                with a CGPA of 8.59/10.0. 
               </p>
               <p>
                 My expertise spans across modern web technologies including the MERN stack, and I'm particularly 
-                passionate about AI integration in web applications. I've successfully integrated Google Gemini API 
-                in multiple projects and have experience with LangChain and prompt engineering.
+                passionate about AI integration in web applications. I'm expert in Building AI Agents and AI workflow Design.
               </p>
               <p>
                 I'm an active competitive programmer with a Knight rating (1935) on LeetCode, ranking in the 
