@@ -3,18 +3,17 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github, Sparkles, ArrowRight } from 'lucide-react';
 import MindFlowPicture from '../assets/MindFlowPicture.png';
-import LeetAssistPicture from '../assets/LeetAssistPicture.png';
 import AiTravelImage from '../assets/AiTravelImage.png';
-
+import Neural_Meet from '../assets/Neural_Meet.png'
 const Projects = () => {
   const projects = [
     {
       title: "NeuralMeet",
       description: "A platform where users can create custom AI agents, hold real-time meetings with them, and automate task-specific interactions. Features post-meeting deliverables including recordings, transcriptions, and AI-generated summaries.",
-      image: MindFlowPicture,
+      image: Neural_Meet,
       technologies: ["Next.js", "TypeScript", "PostgreSQL", "tRPC", "OpenAI"],
-      liveUrl: "#",
-      githubUrl: "https://github.com/Arvind054",
+      liveUrl: "https://github.com/Arvind054/Neural-Meet",
+      githubUrl: "https://github.com/Arvind054/Neural-Meet",
       featured: true,
       date: "Oct 2025"
     },
@@ -26,7 +25,7 @@ const Projects = () => {
       liveUrl: "https://mind-flowai.vercel.app/",
       githubUrl: "https://github.com/Arvind054/MindFlow",
       featured: true,
-      date: "Jul 2025"
+      date: "Aug 2025"
     },
     {
       title: "AI Travel Agent",
