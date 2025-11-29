@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Sparkles, ArrowRight } from 'lucide-react';
 import MindFlowPicture from '../assets/MindFlowPicture.png';
 import LeetAssistPicture from '../assets/LeetAssistPicture.png';
 import AiTravelImage from '../assets/AiTravelImage.png';
@@ -9,90 +9,117 @@ import AiTravelImage from '../assets/AiTravelImage.png';
 const Projects = () => {
   const projects = [
     {
-      title: "MindFlow.AI",
-      description: "A powerful tool for creating customizable mind maps using Google Gemini API with advanced features like React Flow integration, OAuth 2.0 authentication, and PDF export capabilities.",
+      title: "NeuralMeet",
+      description: "A platform where users can create custom AI agents, hold real-time meetings with them, and automate task-specific interactions. Features post-meeting deliverables including recordings, transcriptions, and AI-generated summaries.",
       image: MindFlowPicture,
-      technologies: ["React.js", "Google Gemini API", "React Flow", "OAuth 2.0", "PDF Export"],
+      technologies: ["Next.js", "TypeScript", "PostgreSQL", "tRPC", "OpenAI"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/Arvind054",
+      featured: true,
+      date: "Oct 2025"
+    },
+    {
+      title: "MindFlow.AI",
+      description: "Built an AI platform automating 90% of brainstorming workflows with customized mind-map generation. Implemented OAuth 2.0 authentication and dynamic PDF export for secure user access.",
+      image: MindFlowPicture,
+      technologies: ["React.js", "Node.js", "MongoDB", "Gemini API"],
       liveUrl: "https://mind-flowai.vercel.app/",
       githubUrl: "https://github.com/Arvind054/MindFlow",
       featured: true,
-      date: "July 2025"
+      date: "Jul 2025"
     },
     {
-      title: "LeetAssist Chrome Extension",
-      description: "An intelligent Chrome extension for LeetCode that provides AI-driven code hints, error detection, and follow-up question generation to improve coding efficiency and learning.",
-      image: LeetAssistPicture,
-      technologies: ["Chrome Extension APIs", "JavaScript", "AI Integration", "DOM Manipulation"],
-      liveUrl: "https://github.com/Arvind054/LeetAssist",
-      githubUrl: "https://github.com/Arvind054/LeetAssist",
-      featured: true,
-      date: "July 2025"
-    },
-    {
-      title: "AI Traveling Agent",
+      title: "AI Travel Agent",
       description: "Comprehensive AI travel planner built with MERN stack and Google Gemini API, featuring intelligent trip planning, real-time suggestions, and seamless user authentication.",
       image: AiTravelImage,
-      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Google Gemini API", "OAuth 2.0"],
+      technologies: ["MongoDB", "Express.js", "React.js", "Gemini API"],
       liveUrl: "https://ai-travel-agent-ljkh.vercel.app/",
       githubUrl: "https://github.com/Arvind054/AI_Travel_Agent",
       featured: true,
-      date: "June 2025"
+      date: "Jun 2025"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-24 bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/4 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-6 relative">
+        {/* Section header */}
         <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            <Sparkles className="h-4 w-4" />
+            My Work
+          </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Featured <span className="text-primary">Projects</span>
+            Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my recent work, demonstrating proficiency in various 
-            technologies and problem-solving approaches.
+          <div className="section-divider mb-6" />
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A showcase of my recent work, demonstrating proficiency in various technologies and problem-solving approaches
           </p>
         </div>
 
-        {/* Horizontal Scroll Row */}
-        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory justify-evenly flex-wrap">
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="min-w-[350px] max-w-[350px] flex-shrink-0 snap-center shadow-md hover:shadow-xl transition-all duration-300 "
+              className="group card-hover border-border/50 hover:border-primary/30 bg-card/50 backdrop-blur-sm overflow-hidden"
             >
-              <img 
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
-              />
+              {/* Image container */}
+              <div className="relative overflow-hidden">
+                <img 
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Floating date badge */}
+                <Badge className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm text-foreground border-none">
+                  {project.date}
+                </Badge>
+              </div>
+
               <div className="p-6">
                 <CardHeader className="p-0 mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
-                    <Badge variant="outline" className="text-primary border-primary text-xs">
-                      {project.date}
-                    </Badge>
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-4">
+                  <CardTitle className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
                 </CardHeader>
 
-                <CardContent className="p-0 mt-4">
-                  <div className="flex flex-wrap gap-2 mb-4">
+                <CardContent className="p-0">
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
+                      <span key={techIndex} className="tech-badge">
                         {tech}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button size="sm" className="flex-1 flex rounded-md" onClick={() => window.open(project.liveUrl, '_blank')}>
+                  {/* Action buttons */}
+                  <div className="flex gap-3">
+                    <Button 
+                      size="sm" 
+                      className="flex-1 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground rounded-lg"
+                      onClick={() => window.open(project.liveUrl, '_blank')}
+                    >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Live
+                      Live Demo
                     </Button>
-                    <Button variant="outline" size="sm" className="p-1 flex-1 flex rounded-md border border-white" onClick={() => window.open(project.githubUrl, '_blank')}>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex-1 rounded-lg border-border hover:border-primary hover:bg-primary/5"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                    >
                       <Github className="mr-2 h-4 w-4" />
                       Code
                     </Button>
@@ -103,14 +130,16 @@ const Projects = () => {
           ))}
         </div>
 
+        {/* View all button */}
         <div className="text-center mt-12">
           <Button
             variant="outline"
             size="lg"
-            className="border-primary hover:bg-primary hover:text-primary-foreground"
+            className="group rounded-xl border-2 border-border hover:border-primary hover:bg-primary/5 px-8"
             onClick={() => window.open("https://github.com/Arvind054", '_blank')}
           >
             View All Projects
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
       </div>
